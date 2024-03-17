@@ -1,0 +1,31 @@
+<!-- <p>homepage works!</p> -->
+
+<div class="container">
+  <div class="services pb-5">
+    <div class="container">
+      <div class="pt-4">
+        <h2 class="vc_custom_heading ico_header">Pokemon:</h2>
+        <hr />
+        <button (click)="getData()">Pokemon</button>
+        <div class="row" *ngIf="pokemonList$ | async as pokemonList">
+          <div class="col-md-3 mb-3" *ngFor="let pokemon of datas.results">
+            <div class="card border-0 rounded-0 shadow" style="width: 18rem">
+              <div class="card-body mt-3 mb-3">
+                <div class="row">
+                  <div class="col-12">
+                    <!-- <img src="{{ item.url }}" alt="" /> -->
+                    <img [src]="item.url" alt="" />
+                    <h4 class="card-title">Name: {{ pokemon.name }}</h4>
+                    <h4 class="card-title">Name: {{ pokemonList.name }}</h4>
+                    <!-- <h6>{{ item.email }}</h6>
+                    <p>{{ item.job }}</p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
